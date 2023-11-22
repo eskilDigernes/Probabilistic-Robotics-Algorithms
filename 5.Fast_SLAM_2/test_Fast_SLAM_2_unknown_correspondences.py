@@ -8,6 +8,9 @@ Author: Chenge Yang
 Email: chengeyang2019@u.northwestern.edu
 '''
 
+import os
+os.chdir(os.path.dirname(os.path.abspath(__file__)))
+
 import numpy as np
 import matplotlib.pyplot as plt
 
@@ -19,6 +22,7 @@ from src.Fast_SLAM_2_unknown_correspondences import FastSLAM2
 if __name__ == '__main__':
     # Dataset info
     dataset = "../0.Dataset1"
+    #dataset = "0.Dataset1"
     start_frame = 400
     end_frame = 3200
 

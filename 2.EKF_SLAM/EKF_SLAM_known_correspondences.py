@@ -4,10 +4,11 @@
 Implementation of EKF SLAM with known correspondences.
 See Probabilistic Robotics:
     1. Page 314, Table 10.1 for full algorithm.
-
 Author: Chenge Yang
 Email: chengeyang2019@u.northwestern.edu
 '''
+import os
+os.chdir(os.path.dirname(os.path.abspath(__file__)))
 
 import numpy as np
 import matplotlib.pyplot as plt
@@ -261,8 +262,8 @@ class ExtendedKalmanFilterSLAM():
 
         plt.title('EKF SLAM with known correspondences')
         plt.legend()
-        plt.xlim((-2.0, 5.5))
-        plt.ylim((-7.0, 7.0))
+        plt.xlim((-15.0, 15.5))
+        plt.ylim((-8.0, 8.0))
         plt.pause(1e-16)
 
 
