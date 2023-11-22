@@ -37,7 +37,10 @@ class ExtendedKalmanFilterSLAM():
         # Landmark ground truth: [Subject#, x[m], y[m]]
         self.landmark_groundtruth_data = np.loadtxt(dataset + "/Landmark_Groundtruth.dat")
         # Measurement: [Time[s], Subject#, range[m], bearing[rad]]
-        self.measurement_data = np.loadtxt(dataset + "/Measurement.dat")
+        #self.measurement_data = np.loadtxt(dataset + "/Measurement.dat")
+
+        self.measurement_data = np.loadtxt(dataset + "/m.dat")
+
         # Odometry: [Time[s], Subject#, forward_V[m/s], angular _v[rad/s]]
         self.odometry_data = np.loadtxt(dataset + "/Odometry.dat")
 
@@ -236,7 +239,10 @@ class ExtendedKalmanFilterSLAM():
         # States
         plt.plot(self.states[:, 0], self.states[:, 1], 'r', label="Robot State Estimate")
 
-        # Start and end points
+        # # Start and end points
+        # plt.plot(self.groundtruth_data[0, 1], self.groundtruth_data[0, 2], 'g8', markersize=12, label="Start point")
+        # plt.plot(self.groundtruth_data[-1, 1], self.groundtruth_data[-1, 2], 'y8', markersize=12, label="End point")
+
         plt.plot(self.groundtruth_data[0, 1], self.groundtruth_data[0, 2], 'g8', markersize=12, label="Start point")
         plt.plot(self.groundtruth_data[-1, 1], self.groundtruth_data[-1, 2], 'y8', markersize=12, label="End point")
 

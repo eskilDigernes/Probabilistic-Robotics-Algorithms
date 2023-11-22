@@ -1,7 +1,7 @@
 # UTIAS Multi-Robot Cooperative Localization and Mapping Dataset
 # produced by Keith Leung (keith.leung@robotics.utias.utoronto.ca) 2009
 # Barcode Data Fomat:
-# Subject #    Barcode #
+# Subject     Barcode #
   1 	   5 
   2 	  14 
   3 	  41 
@@ -22,3 +22,14 @@
  18 	  27 
  19 	   7 
  20 	  90 
+  21 	  50
+  22 	  43
+  23 	  34
+  24 	  47
+  25 	  29
+  26 	  52
+  27 	  74
+  28 	  56
+  29 	  38
+  30 	  76
+  31 	  58
