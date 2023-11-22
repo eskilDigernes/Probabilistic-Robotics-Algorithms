@@ -31,16 +31,13 @@ class ExtendedKalmanFilterSLAM():
     def load_data(self, dataset, start_frame, end_frame):
         # Loading dataset
         # Barcodes: [Subject#, Barcode#]
-        self.barcodes_data = np.loadtxt(dataset + "/Barcodes.dat", skiprows=1)
+        self.barcodes_data = np.loadtxt(dataset + "/Barcodes.dat")
         # Ground truth: [Time[s], x[m], y[m], orientation[rad]]
         self.groundtruth_data = np.loadtxt(dataset + "/Groundtruth.dat")
         # Landmark ground truth: [Subject#, x[m], y[m]]
-        self.landmark_groundtruth_data = np.loadtxt(dataset + "/Landmark_Groundtruth.dat", skiprows=2)
+        self.landmark_groundtruth_data = np.loadtxt(dataset + "/Landmark_Groundtruth.dat")
         # Measurement: [Time[s], Subject#, range[m], bearing[rad]]
-        #self.measurement_data = np.loadtxt(dataset + "/Measurement.dat")
-
-        self.measurement_data = np.loadtxt(dataset + "/m.dat")
-
+        self.measurement_data = np.loadtxt(dataset + "/Measurement.dat")
         # Odometry: [Time[s], Subject#, forward_V[m/s], angular _v[rad/s]]
         self.odometry_data = np.loadtxt(dataset + "/Odometry.dat")
 
@@ -239,10 +236,7 @@ class ExtendedKalmanFilterSLAM():
         # States
         plt.plot(self.states[:, 0], self.states[:, 1], 'r', label="Robot State Estimate")
 
-        # # Start and end points
-        # plt.plot(self.groundtruth_data[0, 1], self.groundtruth_data[0, 2], 'g8', markersize=12, label="Start point")
-        # plt.plot(self.groundtruth_data[-1, 1], self.groundtruth_data[-1, 2], 'y8', markersize=12, label="End point")
-
+        # Start and end points
         plt.plot(self.groundtruth_data[0, 1], self.groundtruth_data[0, 2], 'g8', markersize=12, label="Start point")
         plt.plot(self.groundtruth_data[-1, 1], self.groundtruth_data[-1, 2], 'y8', markersize=12, label="End point")
 
@@ -268,8 +262,8 @@ class ExtendedKalmanFilterSLAM():
 
         plt.title('EKF SLAM with known correspondences')
         plt.legend()
-        plt.xlim((-15.0, 15.5))
-        plt.ylim((-8.0, 8.0))
+        plt.xlim((-2.0, 5.5))
+        plt.ylim((-7.0, 7.0))
         plt.pause(1e-16)
 
 
