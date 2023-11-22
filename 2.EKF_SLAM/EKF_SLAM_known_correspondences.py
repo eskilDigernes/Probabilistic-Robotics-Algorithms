@@ -31,11 +31,11 @@ class ExtendedKalmanFilterSLAM():
     def load_data(self, dataset, start_frame, end_frame):
         # Loading dataset
         # Barcodes: [Subject#, Barcode#]
-        self.barcodes_data = np.loadtxt(dataset + "/Barcodes.dat")
+        self.barcodes_data = np.loadtxt(dataset + "/Barcodes.dat", skiprows=1)
         # Ground truth: [Time[s], x[m], y[m], orientation[rad]]
         self.groundtruth_data = np.loadtxt(dataset + "/Groundtruth.dat")
         # Landmark ground truth: [Subject#, x[m], y[m]]
-        self.landmark_groundtruth_data = np.loadtxt(dataset + "/Landmark_Groundtruth.dat")
+        self.landmark_groundtruth_data = np.loadtxt(dataset + "/Landmark_Groundtruth.dat", skiprows=2)
         # Measurement: [Time[s], Subject#, range[m], bearing[rad]]
         #self.measurement_data = np.loadtxt(dataset + "/Measurement.dat")
 

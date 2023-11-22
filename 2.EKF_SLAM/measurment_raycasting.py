@@ -51,7 +51,7 @@ dt = 0.1
 num_time_steps = 100
 
 # Open the output file
-with open("output.dat", "w") as f:
+with open("m.dat", "w") as f:
     # Write the header
     f.write("# Time [s]    Subject #    range [m]    bearing [rad]\n")
 
